@@ -165,5 +165,33 @@ if out_of_limit:
 else:
     print("You Win !!!!")
 
+#---------------------------
+even_no = list(filter(lambda x : x%2==0,list(range(10))))
+odd_no =list(map(lambda x:x+1,even_no))
+two_list = list(zip(even_no,odd_no))
+print(even_no)
+print(odd_no)
+print(two_list)
+#---------------------------------------
+finalList = [x for x in 'abcdefghijklmnop']
+finalList = finalList*2
+finalList.append('w')
+finalList.append('z')
+finalList.sort()
+print(finalList)
+
+#-----------------------------------------------
+finalList = [x for x in 'abcdefghijklmnop']
+finalList = finalList*2
+finalList.append('w')
+finalList.append('z')
+finalList.sort()
+print(finalList)
+duplicates = list(set([x for x in finalList if finalList.count(x) > 1]))
+duplicates.sort()
+print(duplicates)
+
+#---------------------------------------------------------
+
 
 
