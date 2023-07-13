@@ -204,7 +204,54 @@ def main(args: Array[String]): Unit = {
     println(myset.++(myset2))
     println(myset.&(myset2))
 }
-//-------------------------------
+
+//-------------------------------Map
+
+ val mymap :Map[Int,String] = Map(501 -> "Sam",502 ->"Susan",503 -> "Ram",504 -> "Azlam")
+  def main(args: Array[String]): Unit = {
+    println(mymap)
+    println(mymap(502))
+    println(mymap.keys)
+    println(mymap.values)
+    println(mymap.isEmpty)
+    mymap.keys.foreach{key =>
+      println("key : "+key);
+      println("value : "+mymap(key));
+    }
+  }
+
+//----------------------------------tuple
+  val mytuple = (1,2,"hello",true);
+  val mytuple2 = new Tuple3(1,2,"hello");
+  val mytuple3 = new Tuple2(1,"hello");
+  def main(args: Array[String]): Unit = {
+    println(mytuple._1);
+    println(mytuple._2);
+    println(mytuple._3);
+    println(mytuple._4);
+    }
+//-------------------------------------------option
+  var lst = List(1,2,3)
+  var mymap = Map(1->"ram",2->"sam",3->"joe")
+  def main(args: Array[String]): Unit = {
+    println(lst.find(_ > 2).get)
+    println(mymap.get(5).getOrElse("no name exist"))
+    }
+//-----------------------------------reduce/fold/scan
+  val lst = List(1,2,3,7,9,10)
+  val lst1 = List("A","B","C");
+  def main(args: Array[String]): Unit = {
+    println(lst.reduceLeft(_ + _))
+    println(lst1.reduceLeft(_ + _))
+    println(lst.reduceLeft((x,y)=> {println(x+ " "+y); x+y;}))
+    println(lst.reduceLeft(_ - _))
+    println(lst.reduceRight(_ - _))
+    println(lst.reduceLeft((x,y)=> {println(x+ " "+y); x-y;}))
+    println(lst.foldLeft(100)(_ + _))
+    println(lst1.foldLeft("z")(_ + _))
+    println(lst.foldLeft(100)(_ - _))
+    println(lst.scanLeft(20)(_ + _))
+    }
 
 //-----------------------------------
 abstract class Shape {
@@ -259,3 +306,5 @@ var obj = new  myclass(4,6);
 }
 
 //--------------------------------------
+ 
+
